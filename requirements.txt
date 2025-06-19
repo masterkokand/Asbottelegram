@@ -1,3 +1,5 @@
 aiogram==2.25.2
-python-dotenv
+openpyxl==3.1.2
 matplotlib==3.7.2
+pandas==1.5.3
+XlsxWriter==3.1.9
