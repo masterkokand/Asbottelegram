@@ -1,11 +1,9 @@
-from aiogram import types, Dispatcher
-from buttons import main_menu
-from texts import texts  # Agar `texts` yo‘q bo‘lsa, oddiy matn yozing
 
-async def start_handler(message: types.Message):
-    await message.answer(
-        f"👋 Assalomu alaykum, {message.from_user.full_name}!\nMoliyaviy hisob-kitoblar uchun menyudan foydalaning.",
-        reply_markup=main_menu()
-    )
+from aiogram import types
+from aiogram.dispatcher import Dispatcher
+
+async def cmd_start(message: types.Message):
+    await message.answer("👋 Salom! Botga xush kelibsiz!")
+
 def register_start_handler(dp: Dispatcher):
-    dp.register_message_handler(start_handler, commands=['start'])
+    dp.register_message_handler(cmd_start, commands=["start"])
